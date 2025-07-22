@@ -5,6 +5,8 @@ import { GSDevTools } from "gsap/GSDevTools";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 
+gsap.registerPlugin(GSDevTools, SplitText, ScrollTrigger);
+
 const MessageSection = () => {
   useGSAP(() => {
     const firstMsgSplit = SplitText.create(".first-message", {
@@ -26,7 +28,6 @@ const MessageSection = () => {
         trigger: ".message-content",
         start: "top center",
         end: "30% center",
-
         scrub: true,
       },
     });
@@ -38,8 +39,19 @@ const MessageSection = () => {
         trigger: ".message-content",
         start: "30% center",
         end: "50% center",
-
         scrub: true,
+      },
+    });
+    gsap.from(prgtMsgSplit.words, {
+      yPercent: 300,
+      rotate: 9,
+      ease: "back",
+      stager: 0.1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".message-content p",
+        start: "top center",
+        markers: true,
       },
     });
 
@@ -48,7 +60,6 @@ const MessageSection = () => {
       scrollTrigger: {
         trigger: ".msg-text-scroll",
         start: "top 60%",
-        markers: true,
         scrub: true,
       },
     });
