@@ -42,17 +42,19 @@ const MessageSection = () => {
         scrub: true,
       },
     });
-    gsap.from(prgtMsgSplit.words, {
-      yPercent: 300,
-      rotate: 9,
-      ease: "back",
-      stager: 0.1,
-      duration: 1,
+    let prgTl = gsap.timeline({
+      paused: true,
       scrollTrigger: {
         trigger: ".message-content p",
         start: "top center",
-        markers: true,
       },
+    });
+    prgTl.from(prgtMsgSplit.words, {
+      yPercent: 300,
+      rotate: 9,
+      ease: "power3.out",
+      stager: 0.1,
+      duration: 1,
     });
 
     const revealTl = gsap.timeline({

@@ -124,7 +124,7 @@ body::-webkit-scrollbar {
   }
 
   .flavor-section {
-    @apply min-h-dvh bg-milk;
+    @apply min-h-dvh bg-milk pb-5;
 
     .flavor-text-scroll {
       @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-milk absolute z-10;
@@ -145,15 +145,15 @@ body::-webkit-scrollbar {
         @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
 
         .drinks {
-          @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-full h-80;
+          @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-[120%] h-80;
         }
 
         .elements {
-          @apply absolute md:top-0 md:bottom-auto bottom-10 w-full;
+          @apply absolute md:top-0 md:bottom-auto bottom-0 h-full object-contain lg:-translate-x-1/2 lg:left-1/2;
         }
 
         h1 {
-          @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-6xl text-3xl font-semibold uppercase tracking-tighter;
+          @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-4xl text-shadow-[2px_2px_2px_black] text-3xl font-semibold uppercase tracking-tighter;
         }
       }
     }
@@ -167,26 +167,26 @@ body::-webkit-scrollbar {
     }
 
     .nutrition-title {
-      @apply 2xl:max-w-4xl xl:max-w-2xl md:py-0 py-3 md:pb-5 pb-0 lg:pb-0 md:text-center text-[#513022];
+      @apply 2xl:max-w-4xl xl:max-w-2xl md:py-0 py-3 md:pb-10 pb-0 lg:pb-4 md:text-center text-[#513022];
     }
 
     .nutrition-text-scroll {
-      @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-32 -mt-24;
+      @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-100 md:-mt-32 -mt-24;
     }
 
     .nutrition-box {
-      @apply absolute md:bottom-16 bottom-5 w-full md:px-0 px-5;
+      @apply absolute md:bottom-16 bottom-5 w-full md:px-0 px-5 left-1/2 -translate-x-1/2;
 
       .list-wrapper {
-        @apply bg-[#fdebd2] rounded-full border-[.5vw] border-[#e8ddca] mx-auto max-w-7xl md:py-8 py-5 md:px-0 px-5 flex justify-between items-center;
+        @apply bg-[rgba(253,235,210,0.3)] backdrop-blur-lg rounded-full border-[.1vw] border-[rgba(0,0,0,0.3)] mx-auto max-w-7xl md:py-8 py-4 md:px-0 px-5 flex justify-between items-center;
 
         p {
-          @apply text-[#865720];
+          @apply text-[black];
         }
       }
 
       .spacer-border {
-        @apply absolute right-0 top-1/2 transform -translate-y-1/2 md:h-24 h-16 w-px bg-[#C89C6E];
+        @apply absolute right-0 top-1/2 transform -translate-y-1/2 md:h-24 h-16 w-px bg-[black];
       }
     }
   }

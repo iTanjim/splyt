@@ -53,7 +53,6 @@ function HeroSection() {
         yPercent: 30,
         ease: "",
       });
-      //   GSDevTools.create({ animation: tl });
     };
   });
 

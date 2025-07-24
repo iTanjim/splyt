@@ -8,6 +8,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactLenis } from "lenis/react";
 import MessageSection from "./sections/MessageSection";
 import FlavorSection from "./sections/FlavorSection";
+import NutritionSection from "./sections/NutritionSection";
+import BenefitSection from "./sections/BenefitSection";
 
 gsap.registerPlugin(GSDevTools, SplitText, ScrollTrigger);
 
@@ -19,6 +21,8 @@ const App = () => {
         <HeroSection />
         <MessageSection />
         <FlavorSection />
+        <NutritionSection />
+        <BenefitSection />
         <div className="h-dvh border border-red"></div>
       </main>
     </ReactLenis>
