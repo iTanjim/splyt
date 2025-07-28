@@ -1,7 +1,43 @@
+import { useGSAP } from "@gsap/react";
 import ClipPathTitle from "../components/ClipPathTitle";
 import { clipPathTitles } from "../constants";
+import gsap from "gsap";
+import VideoPinSection from "../components/VideoPinSection";
 
 const BenefitSection = () => {
+  useGSAP(() => {
+    const cptTl = gsap.timeline({
+      delay: 1,
+      scrollTrigger: {
+        trigger: ".benefit-section",
+        start: "top 60%",
+        end: "top top",
+        scrub: 1,
+      },
+    });
+    cptTl
+      .to(".benefit-section .first-title", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        ease: "circ.out",
+      })
+      .to(".benefit-section .second-title", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        ease: "circ.out",
+      })
+      .to(".benefit-section .third-title", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        ease: "circ.out",
+      })
+      .to(".benefit-section .fourth-title", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        opacity: 1,
+        ease: "circ.out",
+      });
+  });
+
   return (
     <div className="benefit-section">
       <div className="container mx-auto pt-20">
@@ -22,7 +58,15 @@ const BenefitSection = () => {
               />
             ))}
           </div>
+
+          <div className="md:mt-0 mt-10">
+            <p className="font-paragraph">And much more...</p>
+          </div>
         </div>
+      </div>
+
+      <div className="relative overlay-box">
+        <VideoPinSection />
       </div>
     </div>
   );

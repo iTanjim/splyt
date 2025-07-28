@@ -62,7 +62,7 @@ function HeroSection() {
         <img
           src="/images/static-img.png"
           alt=""
-          className="abs-center object-cover scale-100 md:scale-150"
+          className="abs-center h-full object-cover object-bottom md:object-center scale-100 lg:scale-150"
         />
         <div className="hero-content opacity-0">
           <div className="overflow-hidden">

@@ -16,7 +16,7 @@ gsap.registerPlugin(GSDevTools, SplitText, ScrollTrigger);
 const App = () => {
   return (
     <ReactLenis root>
-      <main>
+      <main className="overflow-hidden md:overflow-auto">
         <NavBar />
         <HeroSection />
         <MessageSection />
