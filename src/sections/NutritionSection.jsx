@@ -17,51 +17,55 @@ const NutritionSection = () => {
       setLists(nutrientLists);
     }
   }, [isMobile]);
+
   useGSAP(() => {
-    const titleSplit = SplitText.create(".nutrition-title", {
-      type: "chars",
-    });
-    const paragraphSplit = SplitText.create(".nutrition-section p", {
-      type: "words, lines",
-      linesClass: "paragraph-line",
-    });
+    document.fonts.ready.then(() => {
+      const titleSplit = SplitText.create(".nutrition-title", {
+        type: "chars",
+      });
+      const paragraphSplit = SplitText.create(".nutrition-section p", {
+        type: "words, lines",
+        linesClass: "paragraph-line",
+      });
 
-    const contentTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".nutrition-section",
-        start: "top center",
-        toggleActions: "play pause play reverse",
-      },
-    });
-
-    contentTl
-      .from(titleSplit.chars, {
-        yPercent: 300,
-        stagger: 0.03,
-        ease: "power2.out",
-      })
-      .from(
-        paragraphSplit.words,
-        {
-          yPercent: 300,
-          rotate: 3,
-          stagger: 0.01,
-          ease: "power2.out",
+      const contentTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".nutrition-section",
+          start: "top center",
+          toggleActions: "play pause play reverse",
+          // markers: true,
         },
-        "-=.5"
-      );
+      });
 
-    const titleTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".nutrition-section",
-        start: "top center",
-        toggleActions: "play pause play reverse",
-      },
-    });
+      contentTl
+        .from(titleSplit.chars, {
+          yPercent: 300,
+          stagger: 0.03,
+          ease: "power2.out",
+        })
+        .from(
+          paragraphSplit.words,
+          {
+            yPercent: 300,
+            rotate: 3,
+            stagger: 0.01,
+            ease: "power2.out",
+          },
+          "-=.5"
+        );
 
-    titleTl.to(".nutrition-text-scroll", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "power2.inOut",
+      const titleTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".nutrition-section",
+          start: "top center",
+          toggleActions: "play pause play reverse",
+        },
+      });
+
+      titleTl.to(".nutrition-text-scroll", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        ease: "power2.inOut",
+      });
     });
   });
   return (

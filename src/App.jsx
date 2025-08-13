@@ -10,6 +10,7 @@ import MessageSection from "./sections/MessageSection";
 import FlavorSection from "./sections/FlavorSection";
 import NutritionSection from "./sections/NutritionSection";
 import BenefitSection from "./sections/BenefitSection";
+import TestimonialSection from "./sections/TestimonialSection";
 
 gsap.registerPlugin(GSDevTools, SplitText, ScrollTrigger);
 
@@ -20,9 +21,14 @@ const App = () => {
         <NavBar />
         <HeroSection />
         <MessageSection />
+
         <FlavorSection />
         <NutritionSection />
-        <BenefitSection />
+
+        <div>
+          <BenefitSection />
+          <TestimonialSection />
+        </div>
         <div className="h-dvh border border-red"></div>
       </main>
     </ReactLenis>

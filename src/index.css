@@ -150,7 +150,7 @@ body::-webkit-scrollbar {
     }
 
     .slider-wrapper {
-      @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 md:mt-20 xl:mt-0;
+      @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 md:mt-20 xl:mt-0 will-change-transform;
 
       .flavors {
         @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
@@ -160,7 +160,7 @@ body::-webkit-scrollbar {
         }
 
         .elements {
-          @apply absolute md:top-0 md:bottom-auto bottom-0 h-full object-contain lg:-translate-x-1/2 lg:left-1/2;
+          @apply absolute md:-top-[20%] bottom-0 h-full object-contain lg:-translate-x-1/2 lg:left-1/2;
         }
 
         h1 {

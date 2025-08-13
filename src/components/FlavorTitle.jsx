@@ -4,48 +4,50 @@ import { SplitText } from "gsap/all";
 
 const FlavorTitle = () => {
   useGSAP(() => {
-    const firstTextSplit = SplitText.create(".first-text-split h1", {
-      type: "chars",
-    });
-    const secondTextSplit = SplitText.create(".second-text-split h1", {
-      type: "chars",
-    });
+    document.fonts.ready.then(() => {
+      const firstTextSplit = SplitText.create(".first-text-split h1", {
+        type: "chars",
+      });
+      const secondTextSplit = SplitText.create(".second-text-split h1", {
+        type: "chars",
+      });
 
-    gsap.from(firstTextSplit.chars, {
-      yPercent: -150,
-      stagger: 0.03,
-      opacity: 0,
-      ease: "power1.inOut",
-      rotation: -5,
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        toggleActions: "play play play reverse",
-        start: "top 80%",
-        end: "20% 80%",
-      },
-    });
-    gsap.from(secondTextSplit.chars, {
-      yPercent: 500,
-      stagger: 0.01,
-      opacity: 0,
-      rotate: 9,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        toggleActions: "play play play reverse",
-        start: "20% 80%",
-      },
-    });
-    gsap.to(".flavor-text-scroll", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 0.65,
-      ease: "power2.inOut",
-      scrollTrigger: {
-        trigger: ".flavor-section",
-        toggleActions: "play play play reverse",
-        start: "top center",
-        end: "center 80%",
-      },
+      gsap.from(firstTextSplit.chars, {
+        yPercent: -150,
+        stagger: 0.03,
+        opacity: 0,
+        ease: "power1.inOut",
+        rotation: -5,
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          toggleActions: "play play play reverse",
+          start: "top 80%",
+          end: "20% 80%",
+        },
+      });
+      gsap.from(secondTextSplit.chars, {
+        yPercent: 500,
+        stagger: 0.01,
+        opacity: 0,
+        rotate: 9,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          toggleActions: "play play play reverse",
+          start: "20% 80%",
+        },
+      });
+      gsap.to(".flavor-text-scroll", {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 0.65,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: ".flavor-section",
+          toggleActions: "play play play reverse",
+          start: "top center",
+          end: "center 80%",
+        },
+      });
     });
   });
   return (

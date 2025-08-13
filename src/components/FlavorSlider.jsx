@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import CustomEase from "gsap/CustomEase";
+gsap.registerPlugin(CustomEase);
+
 const FlavorSlider = () => {
   CustomEase.create("fastInOut", "M0,0 C0.05,0 0.95,1 1,1");
   const sliderRef = useRef();
@@ -16,23 +18,30 @@ const FlavorSlider = () => {
   useGSAP(() => {
     const scrollAmount = sliderRef.current.scrollWidth - window.innerWidth;
 
-    if (!isTablet) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".flavor-section",
-          pin: true,
-          markers: true,
-          start: "top top",
-          end: `+=${scrollAmount / 2}px`,
-          scrub: true,
-        },
-      });
+    if (isTablet) return;
+    const pinDistance = scrollAmount * 0.95;
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        pin: true,
+        markers: true,
+        start: "top top",
+        // end: `+=${scrollAmount / 2}px`,
+        end: `+=${pinDistance / 1.5}px 90%`,
+        scrub: true,
+      },
+    });
 
-      tl.to(".flavor-section", {
-        x: `-${scrollAmount + window.innerWidth}px`,
-        ease: "fastInOut",
-      });
-    }
+    gsap.to(".flavor-section", {
+      x: `-${scrollAmount + window.innerWidth * 1.7}px`,
+      ease: "fastInOut",
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top top",
+        end: `+=${pinDistance / 1.5}px`,
+        scrub: true,
+      },
+    });
 
     // const titleTl = gsap.timeline({
     //   scrollTrigger: {
@@ -61,7 +70,7 @@ const FlavorSlider = () => {
     //     },
     //     "<"
     //   );
-  });
+  }, [isTablet]);
 
   return (
     <div className="slider-wrapper" ref={sliderRef}>
@@ -89,7 +98,7 @@ const FlavorSlider = () => {
               className="elements"
             />
 
-            <h1>{flavor.name}</h1>
+            <h1 className="text-[4vw]">{flavor.name}</h1>
           </div>
         ))}
       </div>

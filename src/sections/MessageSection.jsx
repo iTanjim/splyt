@@ -9,66 +9,67 @@ gsap.registerPlugin(GSDevTools, SplitText, ScrollTrigger);
 
 const MessageSection = () => {
   useGSAP(() => {
-    const firstMsgSplit = SplitText.create(".first-message", {
-      type: "words",
-    });
-    const secondtMsgSplit = SplitText.create(".second-message", {
-      type: "words",
-    });
-    const prgtMsgSplit = SplitText.create(".message-content p", {
-      type: "words, lines",
-      linesClass: "paragraph-line",
-    });
+    document.fonts.ready.then(() => {
+      const firstMsgSplit = SplitText.create(".first-message", {
+        type: "words",
+      });
+      const secondtMsgSplit = SplitText.create(".second-message", {
+        type: "words",
+      });
+      const prgtMsgSplit = SplitText.create(".message-content p", {
+        type: "words, lines",
+        linesClass: "paragraph-line",
+      });
 
-    gsap.to(firstMsgSplit.words, {
-      color: "#faeade",
-      ease: "power3.in",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".message-content",
-        start: "top center",
-        end: "30% center",
-        scrub: true,
-      },
-    });
-    gsap.to(secondtMsgSplit.words, {
-      color: "#faeade",
-      ease: "power3.in",
-      stagger: 0.1,
-      scrollTrigger: {
-        trigger: ".message-content",
-        start: "30% center",
-        end: "50% center",
-        scrub: true,
-      },
-    });
-    let prgTl = gsap.timeline({
-      paused: true,
-      scrollTrigger: {
-        trigger: ".message-content p",
-        start: "top center",
-      },
-    });
-    prgTl.from(prgtMsgSplit.words, {
-      yPercent: 300,
-      rotate: 9,
-      ease: "power3.out",
-      stager: 0.1,
-      duration: 1,
-    });
+      gsap.to(firstMsgSplit.words, {
+        color: "#faeade",
+        ease: "power3.in",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".message-content",
+          start: "top center",
+          end: "30% center",
+          scrub: true,
+        },
+      });
+      gsap.to(secondtMsgSplit.words, {
+        color: "#faeade",
+        ease: "power3.in",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".message-content",
+          start: "30% center",
+          end: "50% center",
+          scrub: true,
+        },
+      });
+      let prgTl = gsap.timeline({
+        paused: true,
+        scrollTrigger: {
+          trigger: ".message-content p",
+          toggleActions: "play play play reverse",
+          start: "-50% 80%",
+        },
+      });
+      prgTl.from(prgtMsgSplit.words, {
+        yPercent: 300,
+        ease: "back(-1)",
+        stagger: 0.01,
+      });
 
-    const revealTl = gsap.timeline({
-      delay: 1,
-      scrollTrigger: {
-        trigger: ".msg-text-scroll",
-        start: "top 60%",
-        scrub: true,
-      },
-    });
-    revealTl.to(".msg-text-scroll", {
-      duration: 1,
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      ease: "back",
+      const revealTl = gsap.timeline({
+        delay: 1,
+        scrollTrigger: {
+          trigger: ".msg-text-scroll",
+          start: "top 60%",
+          scrub: true,
+        },
+      });
+      revealTl.to(".msg-text-scroll", {
+        duration: 1,
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        ease: "back",
+      });
     });
   });
 
@@ -96,7 +97,7 @@ const MessageSection = () => {
 
           <div className="flex-center md:mt-20 mt-10">
             <div className="max-w-md px-10 flex-center">
-              <p>
+              <p className="md:text-[1.9vw] text-[2.5vw]">
                 Lorem ipsum dolor sit amet consectetur adipisicingelit. Quas ut
                 atque blanditiis quo, itaque excepturi. Sapiente corrupti ab
                 officiis.

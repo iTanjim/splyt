@@ -50,6 +50,7 @@ const BenefitSection = () => {
           <div className="mt-20 col-center">
             {clipPathTitles.map((box) => (
               <ClipPathTitle
+                key={box.title}
                 title={box.title}
                 color={box.color}
                 bg={box.bg}
