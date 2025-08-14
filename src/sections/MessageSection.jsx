@@ -97,7 +97,7 @@ const MessageSection = () => {
 
           <div className="flex-center md:mt-20 mt-10">
             <div className="max-w-md px-10 flex-center">
-              <p className="md:text-[1.9vw] text-[2.5vw]">
+              <p className="md:text-[.9vw] text-[2.5vw]">
                 Lorem ipsum dolor sit amet consectetur adipisicingelit. Quas ut
                 atque blanditiis quo, itaque excepturi. Sapiente corrupti ab
                 officiis.

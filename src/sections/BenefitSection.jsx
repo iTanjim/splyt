@@ -60,8 +60,10 @@ const BenefitSection = () => {
             ))}
           </div>
 
-          <div className="md:mt-0 mt-10">
-            <p className="font-paragraph">And much more...</p>
+          <div className="md:mt-5 mt-10">
+            <p className="font-paragraph md:text-[2vh] uppercase">
+              And so much more...
+            </p>
           </div>
         </div>
       </div>

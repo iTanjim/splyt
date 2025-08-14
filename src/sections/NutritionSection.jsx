@@ -57,14 +57,15 @@ const NutritionSection = () => {
       const titleTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".nutrition-section",
-          start: "top center",
+          start: "20% center",
+          markers: true,
           toggleActions: "play pause play reverse",
         },
       });
 
       titleTl.to(".nutrition-text-scroll", {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        ease: "power2.inOut",
+        ease: "circ.inOut",
       });
     });
   });

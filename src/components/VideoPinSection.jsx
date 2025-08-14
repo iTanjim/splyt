@@ -25,7 +25,6 @@ const VideoPinSection = () => {
         trigger: ".vd-pin-section",
         start: "top top",
         end: "+=220%",
-        scrub: true,
         pin: true,
       },
     });
@@ -39,10 +38,11 @@ const VideoPinSection = () => {
         scrub: true,
       },
     });
+    gsap.set(".spin-cont", {});
   }, [isMobile]);
 
   return (
-    <section className="vd-pin-section h-screen overflow-hidden">
+    <section className="vd-pin-section h-screen -mt-80 relative">
       <div
         className="video-box w-full h-full"
         style={{
@@ -59,15 +59,25 @@ const VideoPinSection = () => {
           loop
           autoPlay
         />
-        <div className="abs-center md:scale-100 scale-150 flex justify-center">
-          <img
-            className="spin-circle md:w-2/3 w-1/2 bg-amber-600 amber-mask"
-            src="/images/circle-text.svg"
-            alt=""
-          />
-          <div className="play-btn">
-            <img className="w-[3vw] ml-[0.5vw]" src="/images/play.svg" alt="" />
-          </div>
+      </div>
+      {/* <div className="abs-center absolute md:scale-100 scale-150 flex justify-center spin-cont">
+        <img
+          className="spin-circle md:w-2/3 w-1/2 bg-amber-600 amber-mask"
+          src="/images/circle-text.svg"
+          alt=""
+        />
+        <div className="play-btn">
+          <img className="w-[3vw] ml-[0.5vw]" src="/images/play.svg" alt="" />
+        </div>
+      </div> */}
+      <div className="abs-center absolute md:scale-100 scale-150 flex justify-center spin-cont">
+        <img
+          className="spin-circle md:w-2/3 w-1/2 bg-amber-600 amber-mask"
+          src="/images/circle-text.svg"
+          alt=""
+        />
+        <div className="play-btn">
+          <img className="w-[3vw] ml-[0.5vw]" src="/images/play.svg" alt="" />
         </div>
       </div>
     </section>

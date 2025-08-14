@@ -10,6 +10,60 @@ const TestimonialSection = () => {
     gsap.set(".testimonials-section", {
       marginTop: "-140vh",
     });
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonials-section",
+        start: "top top",
+        end: "+=200%",
+        scrub: true,
+        pin: true,
+      },
+    });
+    const titleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonials-section",
+        start: "top center",
+        end: "+=200%",
+        scrub: true,
+
+        // markers: true,
+      },
+    });
+
+    titleTl
+      .to(".testimonials-section .first-title", {
+        xPercent: 70,
+      })
+      .to(
+        ".testimonials-section .sec-title",
+        {
+          xPercent: 25,
+        },
+        "<"
+      )
+      .to(
+        ".testimonials-section .third-title",
+        {
+          xPercent: -50,
+        },
+        "<"
+      );
+
+    const pinTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonials-section",
+        start: "10% top",
+        end: "200% top",
+        scrub: 1.5,
+        pin: true,
+        markers: true,
+      },
+    });
+    pinTl.from(".vd-card", {
+      yPercent: 150,
+      stagger: 0.1,
+    });
   });
 
   const handlePlay = (index) => {
