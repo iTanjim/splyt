@@ -58,7 +58,6 @@ const NutritionSection = () => {
         scrollTrigger: {
           trigger: ".nutrition-section",
           start: "20% center",
-          markers: true,
           toggleActions: "play pause play reverse",
         },
       });

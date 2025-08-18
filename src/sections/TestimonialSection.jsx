@@ -11,23 +11,21 @@ const TestimonialSection = () => {
       marginTop: "-140vh",
     });
 
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: ".testimonials-section",
-        start: "top top",
-        end: "+=200%",
-        scrub: true,
-        pin: true,
-      },
-    });
+    // gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".testimonials-section",
+    //     start: "top bottom",
+    //     end: "200% true",
+    //     scrub: true,
+    //     pin: true,
+    //   },
+    // });
     const titleTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".testimonials-section",
-        start: "top center",
-        end: "+=200%",
+        start: "top bottom",
+        end: "200% top",
         scrub: true,
-
-        // markers: true,
       },
     });
 
@@ -45,7 +43,7 @@ const TestimonialSection = () => {
       .to(
         ".testimonials-section .third-title",
         {
-          xPercent: -50,
+          xPercent: -60,
         },
         "<"
       );
@@ -55,14 +53,15 @@ const TestimonialSection = () => {
         trigger: ".testimonials-section",
         start: "10% top",
         end: "200% top",
-        scrub: 1.5,
         pin: true,
+        scrub: 1.5,
         markers: true,
       },
     });
     pinTl.from(".vd-card", {
       yPercent: 150,
-      stagger: 0.1,
+      stagger: 0.15,
+      ease: "power1.inOut",
     });
   });
 
@@ -77,9 +76,9 @@ const TestimonialSection = () => {
   return (
     <section className="testimonials-section">
       <div className="absolute size-full flex flex-col items-center pt-[5vw]">
-        <h1 className="text-black first-title">What's</h1>
-        <h1 className="text-light-brown sec-title">Everyone</h1>
-        <h1 className="text-black third-title">Saying</h1>
+        <h1 className="text-black first-title md:text-[15vw]">What's</h1>
+        <h1 className="text-light-brown sec-title md:text-[15vw]">Everyone</h1>
+        <h1 className="text-black third-title md:text-[15vw]">Saying</h1>
       </div>
       <div className="pin-box">
         {cards.map((card, index) => {

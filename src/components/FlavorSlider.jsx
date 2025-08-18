@@ -20,7 +20,7 @@ const FlavorSlider = () => {
 
     if (isTablet) return;
     const pinDistance = scrollAmount * 0.95;
-    const tl = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
         trigger: ".flavor-section",
         pin: true,
