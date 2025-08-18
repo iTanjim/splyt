@@ -203,7 +203,7 @@ body::-webkit-scrollbar {
   }
 
   .benefit-section {
-    @apply min-h-dvh bg-[#222123] overflow-hidden relative;
+    @apply min-h-[dvh] bg-[#222123] overflow-hidden relative;
 
     p {
       @apply text-milk font-paragraph text-center text-lg;
@@ -233,7 +233,7 @@ body::-webkit-scrollbar {
       }
 
       .play-btn {
-        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[7vw] flex justify-center items-center bg-amber-400/30 backdrop-blur-lg rounded-full;
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[7vw] flex justify-center items-center backdrop-blur-lg rounded-full;
       }
 
       img:first-of-type {
@@ -243,13 +243,13 @@ body::-webkit-scrollbar {
   }
 
   .testimonials-section {
-    @apply bg-milk relative w-full h-[120dvh];
+    @apply bg-milk relative w-full h-[150dvh];
 
     .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-[30vh] bottom-[50vh];
+      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-[50vh] bottom-[50vh];
 
       .vd-card {
-        @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;
+        @apply md:w-100 w-80 flex-none -ms-44 overflow-hidden 2xl:relative absolute;
       }
     }
 

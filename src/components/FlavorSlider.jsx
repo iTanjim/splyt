@@ -42,33 +42,33 @@ const FlavorSlider = () => {
       },
     });
 
-    // const titleTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: ".flavor-section",
-    //     start: "top top",
-    //     end: "bottom 80%",
-    //     ease: "power1.inOut",
-    //     scrub: true,
-    //   },
-    // });
-    // titleTl
-    //   .to(".first-text-split", {
-    //     xPercent: -30,
-    //   })
-    //   .to(
-    //     ".flavor-text-scroll",
-    //     {
-    //       xPercent: -32,
-    //     },
-    //     "<"
-    //   )
-    //   .to(
-    //     ".second-text-split",
-    //     {
-    //       xPercent: -20,
-    //     },
-    //     "<"
-    //   );
+    const titleTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".flavor-section",
+        start: "top top",
+        end: "bottom 80%",
+        ease: "power1.inOut",
+        scrub: true,
+      },
+    });
+    titleTl
+      .to(".first-text-split", {
+        xPercent: -30,
+      })
+      .to(
+        ".flavor-text-scroll",
+        {
+          xPercent: -50,
+        },
+        "<"
+      )
+      .to(
+        ".second-text-split",
+        {
+          xPercent: -20,
+        },
+        "<"
+      );
   }, [isTablet]);
 
   return (

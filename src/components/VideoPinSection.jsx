@@ -70,9 +70,9 @@ const VideoPinSection = () => {
           <img className="w-[3vw] ml-[0.5vw]" src="/images/play.svg" alt="" />
         </div>
       </div> */}
-      <div className="abs-center absolute md:scale-100 scale-150 flex justify-center spin-cont">
+      <div className="abs-center absolute md:scale-100 scale-150 flex justify-center spin-cont cursor-pointer">
         <img
-          className="spin-circle md:w-2/3 w-1/2 bg-amber-600 amber-mask"
+          className="spin-circle md:w-2/3 w-1/2"
           src="/images/circle-text.svg"
           alt=""
         />
